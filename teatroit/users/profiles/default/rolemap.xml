@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<rolemap>
+  <roles>
+    <role name="Redattore"/>
+    <role name="Compagnia"/>
+    <role name="Teatro"/>
+  </roles>
+  <permissions>
+  </permissions>
+</rolemap>
