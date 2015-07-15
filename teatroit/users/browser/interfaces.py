@@ -1,7 +1,12 @@
 from zope.interface import Interface
 from zope import schema
 from quintagroup.formlib.captcha import Captcha
+from zope.app.form.browser.itemswidgets import SelectWidget
 from .. import teatroitUsersMessageFactory as _
+
+
+SelectWidget._messageNoValue = _("vocabulary-missing-single-value-for-edit",
+                      "Seleziona un valore.")
 
 
 class IBasicRegistrationForm(Interface):
@@ -30,4 +35,5 @@ class ITeatroRegistration(Interface):
     telefono = schema.TextLine(title=_(u"Telefono"), description=u"")
 
 class ICompagniaRegistration(Interface):
-    tipo = schema.TextLine(title=_(u"Tipo compagnia"), description=u"")
+    tipo = schema.Choice(title=_(u"Tipo compagnia"), description=u"",
+                         vocabulary=u'tipo_compagnia_vocab')
