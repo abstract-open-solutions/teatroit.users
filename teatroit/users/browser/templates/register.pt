@@ -1,0 +1,11 @@
+<metal:use-macro use-macro="context/main_template/macros/master">
+
+    <metal:fill-slot fill-slot="main">
+        <tal:define define="portal_url context/@@plone_portal_state/portal_url;">
+            <a href="" tal:attributes="href string:${portal_url}/@@register">Utente</a>
+            <a href="" tal:attributes="href string:${portal_url}/@@teatro_register">Teatro</a>
+            <a href="" tal:attributes="href string:${portal_url}/@@compagnia_register">Compagnia</a>
+        </tal:define>
+    </metal:fill-slot>
+
+</metal:use-macro>

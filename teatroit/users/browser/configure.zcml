@@ -4,6 +4,14 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     i18n_domain="teatroit.users">
 
+  <!-- Register landing page -->
+  <browser:page
+      name="iscriviti"
+      for="Products.CMFPlone.Portal.PloneSite"
+      template="templates/register.pt"
+      permission="zope.Public"
+      />
+  <!-- Join forms -->
   <browser:page
       name="register"
       for="Products.CMFPlone.Portal.PloneSite"
