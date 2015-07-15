@@ -7,7 +7,7 @@ setup(name='teatroit.users',
       version=version,
       description="Teatro.it users",
       long_description=open("README.rst").read() + "\n" +
-                       open("CHANGES.txt").read(),
+                       open("CHANGES.rst").read(),
       # Get more strings from
       # http://pypi.python.org/pypi?:action=list_classifiers
       classifiers=[
