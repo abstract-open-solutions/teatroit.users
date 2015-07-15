@@ -15,19 +15,19 @@
   <browser:page
       name="register"
       for="Products.CMFPlone.Portal.PloneSite"
-      class=".forms.UtenteRegistrationForm"
+      class=".register.UtenteRegistrationForm"
       permission="zope.Public"
       />
   <browser:page
       name="teatro_register"
       for="Products.CMFPlone.Portal.PloneSite"
-      class=".forms.TeatroRegistrationForm"
+      class=".register.TeatroRegistrationForm"
       permission="zope.Public"
       />
   <browser:page
       name="compagnia_register"
       for="Products.CMFPlone.Portal.PloneSite"
-      class=".forms.CompagniaRegistrationForm"
+      class=".register.CompagniaRegistrationForm"
       permission="zope.Public"
       />
   
