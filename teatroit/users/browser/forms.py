@@ -20,6 +20,7 @@ class BasicRegistrationForm(RegistrationForm):
     def _addCaptcha(self, fields):
         fields += form.Fields(ICaptchaSchema)
         fields['captcha'].custom_widget = CaptchaWidget
+        return fields
 
 
 class UtenteRegistrationForm(BasicRegistrationForm):
@@ -31,7 +32,7 @@ class UtenteRegistrationForm(BasicRegistrationForm):
         # Add a captcha field to the schema
         myfields += form.Fields(IUtenteRegistration)
 
-        self._addCaptcha(myfields)
+        myfields = self._addCaptcha(myfields)
 
         # Return the fiddled fields
         return myfields
@@ -46,7 +47,7 @@ class TeatroRegistrationForm(BasicRegistrationForm):
         # Add a captcha field to the schema
         myfields += form.Fields(ITeatroRegistration)
 
-        self._addCaptcha(myfields)
+        myfields = self._addCaptcha(myfields)
 
         # Return the fiddled fields
         return myfields
@@ -61,7 +62,7 @@ class CompagniaRegistrationForm(BasicRegistrationForm):
         # Add a captcha field to the schema
         myfields += form.Fields(ICompagniaRegistration)
 
-        self._addCaptcha(myfields)
+        myfields = self._addCaptcha(myfields)
 
         # Return the fiddled fields
         return myfields
