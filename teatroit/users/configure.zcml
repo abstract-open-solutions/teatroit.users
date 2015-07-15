@@ -15,5 +15,15 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
   <!-- -*- extra stuff goes here -*- -->
+  <!-- Setup handlers -->
+  <genericsetup:importStep
+      name="teatroit_users_handlers"
+      title="teatroit.users handlers"
+      description=""
+      handler=".setuphandlers.setupVarious">
+          <depends name="content"/>
+          <depends name="toolset"/>
+  </genericsetup:importStep>
+
   
 </configure>
