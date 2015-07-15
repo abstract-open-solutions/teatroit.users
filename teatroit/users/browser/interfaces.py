@@ -11,23 +11,23 @@ class IBasicRegistrationForm(Interface):
 
 class ICaptchaSchema(Interface):
     captcha = Captcha(
-        title=_(u'Verification'),
+        title=_(u'Verifica'),
         description=_(
-            u'Type the code from the picture shown below.'
+            u'Digita il codice mostrato nell\'immagine.'
         ),
     )
 
 
 class IUtenteRegistration(Interface):
-    provincia = schema.TextLine(title=u"provincia", description=u"")
+    provincia = schema.TextLine(title=_(u"Provincia"), description=u"")
 
 
 class ITeatroRegistration(Interface):
-    location = schema.TextLine(title=u"location", description=u"")
-    comune = schema.TextLine(title=u"comune", description=u"")
-    provincia = schema.TextLine(title=u"provincia", description=u"")
-    cap = schema.TextLine(title=u"cap", description=u"")
-    telefono = schema.TextLine(title=u"telefono", description=u"")
+    location = schema.TextLine(title=_(u"Indirizzo"), description=u"")
+    comune = schema.TextLine(title=_(u"Comune"), description=u"")
+    provincia = schema.TextLine(title=_(u"Provincia"), description=u"")
+    cap = schema.TextLine(title=_(u"CAP"), description=u"")
+    telefono = schema.TextLine(title=_(u"Telefono"), description=u"")
 
 class ICompagniaRegistration(Interface):
-    tipo = schema.TextLine(title=u"tipo", description=u"")
+    tipo = schema.TextLine(title=_(u"Tipo compagnia"), description=u"")
