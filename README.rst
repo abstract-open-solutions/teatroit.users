@@ -19,7 +19,9 @@ TODO:
 
 * form preferenze personali custom
 
-* setup content rules (a mano?)
+* setup content rules
+
+* campo email aggiuntivo su gruppo
 
 * login sociali (fuori, da discutere)
 
