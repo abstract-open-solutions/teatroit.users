@@ -6,7 +6,7 @@ from teatroit.users.tests import \
     TEATROIT_USERS_INTEGRATION_TESTING
 
 
-class TestInstall(unittest.TestCase):
+class TestGroups(unittest.TestCase):
 
     layer = TEATROIT_USERS_INTEGRATION_TESTING
 
