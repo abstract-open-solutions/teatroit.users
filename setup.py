@@ -3,6 +3,10 @@ import os
 
 version = '0.1'
 
+testing_requires = [
+    'plone.app.testing',
+]
+
 setup(name='teatroit.users',
       version=version,
       description="Teatro.it users",
@@ -27,6 +31,7 @@ setup(name='teatroit.users',
           'setuptools',
           # -*- Extra requirements: -*-
       ],
+      extras_require={'test': testing_requires},
       entry_points="""
       # -*- Entry points: -*-
 
