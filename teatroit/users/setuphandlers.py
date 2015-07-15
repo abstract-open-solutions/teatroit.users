@@ -1,3 +1,6 @@
+from Products.CMFCore.utils import getToolByName
+from .config import GROUPS
+
 class SetupVarious:
 
     def __call__(self, context):
@@ -14,7 +17,17 @@ class SetupVarious:
         site = context.getSite()
 
         # do something...
+        self.setupGroups(site)
 
+    def setupGroups(self, site):
+        acl_users = getToolByName(site, 'acl_users')
+        portal_groups = getToolByName(site, 'portal_groups')
+        for group_id, group_title, roles in GROUPS:
+            if not acl_users.searchGroups(id=group_id):
+                portal_groups.addGroup(group_id,
+                                       title=group_title,
+                                       roles=roles,
+                                      )
 
 def setupVarious(context):
     """ setup various step. Handles for steps not handled by a gs profile """
