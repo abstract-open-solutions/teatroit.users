@@ -1,6 +1,10 @@
 from zope.formlib import form
+from zope.component import getMultiAdapter
 from zope.interface import implements
 from plone.app.users.browser.register import RegistrationForm
+
+from Products.CMFCore.utils import getToolByName
+
 from quintagroup.formlib.captcha import CaptchaWidget
 from .interfaces import (
     IBasicRegistrationForm,
@@ -22,8 +26,22 @@ class BasicRegistrationForm(RegistrationForm):
         fields['captcha'].custom_widget = CaptchaWidget
         return fields
 
+    def handle_join_success(self, data):
+        super(BasicRegistrationForm, self).handle_join_success(data)
+        user_id = data['username']
+        group_id = self.GROUP_ID
+        if group_id is not None:
+            membership = getMultiAdapter((self.context, self.request),
+                                         name=u'plone_tools').membership()
+            member = membership.getMemberById(user_id)
+            portal_groups = getToolByName(self.context, 'portal_groups')
+            portal_groups.addPrincipalToGroup(member.getUserName(), group_id)
+        return
+
 
 class UtenteRegistrationForm(BasicRegistrationForm):
+    GROUP_ID = None
+
     @property
     def form_fields(self):
         # Get the fields so we can fiddle with them
@@ -39,6 +57,8 @@ class UtenteRegistrationForm(BasicRegistrationForm):
 
 
 class TeatroRegistrationForm(BasicRegistrationForm):
+    GROUP_ID = 'teatri'
+
     @property
     def form_fields(self):
         # Get the fields so we can fiddle with them
@@ -54,6 +74,8 @@ class TeatroRegistrationForm(BasicRegistrationForm):
 
 
 class CompagniaRegistrationForm(BasicRegistrationForm):
+    GROUP_ID = 'compagnie'
+
     @property
     def form_fields(self):
         # Get the fields so we can fiddle with them
