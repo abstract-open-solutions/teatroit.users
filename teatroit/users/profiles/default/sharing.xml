@@ -1,0 +1,21 @@
+<sharing xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+         i18n:domain="plone">
+    <role
+        id="Redattore"
+        title="Redattore"
+        permission=""
+        i18n:attributes="title"
+        />
+    <role
+        id="Compagnia"
+        title="Compagnia"
+        permission=""
+        i18n:attributes="title"
+        />
+    <role
+        id="Teatro"
+        title="Teatro"
+        permission=""
+        i18n:attributes="title"
+        />
+</sharing>

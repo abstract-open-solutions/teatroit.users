@@ -1,3 +1,4 @@
+from plone.app.controlpanel.security import ISecuritySchema
 from Products.CMFCore.utils import getToolByName
 from .config import GROUPS
 
@@ -18,6 +19,7 @@ class SetupVarious:
 
         # do something...
         self.setupGroups(site)
+        self.setupSelfRegistration(site)
 
     def setupGroups(self, site):
         acl_users = getToolByName(site, 'acl_users')
@@ -28,6 +30,9 @@ class SetupVarious:
                                        title=group_title,
                                        roles=roles,
                                       )
+
+    def setupSelfRegistration(self, site):
+         ISecuritySchema(site).enable_self_reg = True
 
 def setupVarious(context):
     """ setup various step. Handles for steps not handled by a gs profile """
