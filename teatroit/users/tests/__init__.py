@@ -1,7 +1,10 @@
-from plone.app.testing import PloneSandboxLayer
-from plone.app.testing import applyProfile
-from plone.app.testing import PLONE_FIXTURE
-from plone.app.testing import IntegrationTesting
+from plone.app.testing import (
+    PloneSandboxLayer,
+    applyProfile,
+    quickInstallProduct,
+    PLONE_FIXTURE,
+    IntegrationTesting,
+    )
 
 from plone.testing import z2
 
@@ -14,6 +17,8 @@ class TeatroitUsersLayer(PloneSandboxLayer):
 
     def setUpZope(self, app, configurationContext):
         # Load ZCML
+        import quintagroup.formlib.captcha
+        xmlconfig.file('configure.zcml', quintagroup.formlib.captcha, context=configurationContext)
         import teatroit.users
         xmlconfig.file('configure.zcml', teatroit.users, context=configurationContext)
 
@@ -25,6 +30,7 @@ class TeatroitUsersLayer(PloneSandboxLayer):
 #        z2.uninstallProduct(app, 'Products.PloneFormGen')
 
     def setUpPloneSite(self, portal):
+        quickInstallProduct(portal, 'quintagroup.formlib.captcha')
         applyProfile(portal, 'teatroit.users:default')
 
 TEATROIT_USERS_FIXTURE = TeatroitUsersLayer()

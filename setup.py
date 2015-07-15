@@ -30,6 +30,7 @@ setup(name='teatroit.users',
       install_requires=[
           'setuptools',
           # -*- Extra requirements: -*-
+          'quintagroup.formlib.captcha',
       ],
       extras_require={'test': testing_requires},
       entry_points="""

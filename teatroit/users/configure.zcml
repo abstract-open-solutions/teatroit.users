@@ -6,6 +6,7 @@
     i18n_domain="teatroit.users">
 
   <five:registerPackage package="." initialize=".initialize" />
+  <include package=".browser" />
 
   <genericsetup:registerProfile
       name="default"

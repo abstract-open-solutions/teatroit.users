@@ -1,4 +1,8 @@
 # -*- extra stuff goes here -*-
+from zope.i18nmessageid import MessageFactory
+from .config import PROJECTNAME
+
+teatroitUsersMessageFactory = MessageFactory(PROJECTNAME)
 
 
 def initialize(context):
