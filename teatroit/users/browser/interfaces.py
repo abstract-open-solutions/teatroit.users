@@ -24,13 +24,14 @@ class ICaptchaSchema(Interface):
 
 
 class IUtenteRegistration(Interface):
-    provincia = schema.TextLine(title=_(u"Provincia"), description=u"")
+    provincia = schema.Choice(title=_(u"Provincia"), description=u"",
+                              vocabulary=u'provincia_vocab')
 
 
 class ITeatroRegistration(Interface):
     location = schema.TextLine(title=_(u"Indirizzo"), description=u"")
     comune = schema.TextLine(title=_(u"Comune"), description=u"")
-    provincia = schema.TextLine(title=_(u"Provincia"), description=u"")
+    provincia = IUtenteRegistration['provincia']
     cap = schema.TextLine(title=_(u"CAP"), description=u"")
     telefono = schema.TextLine(title=_(u"Telefono"), description=u"")
 

@@ -8,5 +8,10 @@
         component=".vocabularies.tipo_compagnia_vocab"
         name="tipo_compagnia_vocab"
         />
+    <utility
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        component=".vocabularies.provincia_vocab"
+        name="provincia_vocab"
+        />
 
 </configure>

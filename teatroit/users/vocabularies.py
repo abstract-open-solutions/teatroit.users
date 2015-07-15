@@ -1,6 +1,9 @@
 from zope.schema.vocabulary import SimpleVocabulary
 from zope.schema.vocabulary import SimpleTerm
-from .config import TIPO_COMPAGNIA_VOCAB
+from .config import (
+    TIPO_COMPAGNIA_VOCAB,
+    PROVINCIA_VOCAB,
+    )
 
 
 class ItemsVocab(object):
@@ -18,3 +21,4 @@ class ItemsVocab(object):
 
 
 tipo_compagnia_vocab = ItemsVocab(TIPO_COMPAGNIA_VOCAB)
+provincia_vocab = ItemsVocab(PROVINCIA_VOCAB)
