@@ -13,15 +13,13 @@ Cosa fa:
 
 * abilitazione captcha su join form
 
-* 3 differenti percorsi di registrazione (@@register, @@teatro_register e @@compagnia_register)
+* una vista landing @@iscriviti con 3 differenti percorsi di registrazione (@@register, @@teatro_register e @@compagnia_register)
 
 TODO:
 
 * form preferenze personali custom
 
-* landing che inoltra sulle 3 diverse tipologie di join form
-
-* setup content rules
+* setup content rules (a mano?)
 
 * login sociali (fuori, da discutere)
 
