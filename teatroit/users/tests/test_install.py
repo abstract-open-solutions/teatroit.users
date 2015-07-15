@@ -23,3 +23,8 @@ class TestInstall(unittest.TestCase):
         installed = [p['id'] for p in self.qi_tool.listInstalledProducts()]
         self.assertTrue(pid in installed,
                         'package appears not to have been installed')
+
+    def test_autoregister(self):
+        from plone.app.controlpanel.security import ISecuritySchema
+  
+        assert ISecuritySchema(self.portal).enable_self_reg
