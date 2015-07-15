@@ -4,6 +4,10 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     i18n_domain="teatroit.users">
 
+  <include package="Products.CMFCore" file="permissions.zcml"
+           xmlns:zcml="http://namespaces.zope.org/zcml"
+           zcml:condition="have plone-41" />
+
   <!-- Register landing page -->
   <browser:page
       name="iscriviti"
@@ -30,5 +34,28 @@
       class=".register.CompagniaRegistrationForm"
       permission="zope.Public"
       />
+  <!-- Prefs form -->
+  <browser:page
+    for="Products.CMFPlone.Portal.PloneSite"
+    name="personal-information"
+    class=".prefs.CustomizedUserDataPanel"
+    permission="cmf.SetOwnProperties"
+    />
+  <!-- Adapters -->
+  <adapter
+    provides=".interfaces.ICompagniaRegistration"
+    for="plone.app.layout.navigation.interfaces.INavigationRoot"
+    factory=".user_adapters.CompagniaUserDataPanelAdapter"
+    />
+  <adapter
+    provides=".interfaces.ITeatroRegistration"
+    for="plone.app.layout.navigation.interfaces.INavigationRoot"
+    factory=".user_adapters.TeatroUserDataPanelAdapter"
+    />
+  <adapter
+    provides=".interfaces.IUtenteRegistration"
+    for="plone.app.layout.navigation.interfaces.INavigationRoot"
+    factory=".user_adapters.UtenteUserDataPanelAdapter"
+    />
   
 </configure>
