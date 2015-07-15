@@ -5,7 +5,7 @@
     i18n_domain="teatroit.users">
 
   <browser:page
-      name="utente_register"
+      name="register"
       for="Products.CMFPlone.Portal.PloneSite"
       class=".forms.UtenteRegistrationForm"
       permission="zope.Public"
