@@ -43,19 +43,9 @@
     />
   <!-- Adapters -->
   <adapter
-    provides=".interfaces.ICompagniaRegistration"
+    provides="..userdataschema.IEnhancedUserDataSchema"
     for="plone.app.layout.navigation.interfaces.INavigationRoot"
-    factory=".user_adapters.CompagniaUserDataPanelAdapter"
-    />
-  <adapter
-    provides=".interfaces.ITeatroRegistration"
-    for="plone.app.layout.navigation.interfaces.INavigationRoot"
-    factory=".user_adapters.TeatroUserDataPanelAdapter"
-    />
-  <adapter
-    provides=".interfaces.IUtenteRegistration"
-    for="plone.app.layout.navigation.interfaces.INavigationRoot"
-    factory=".user_adapters.UtenteUserDataPanelAdapter"
+    factory=".user_adapters.UserDataPanelAdapter"
     />
   
 </configure>

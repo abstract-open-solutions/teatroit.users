@@ -21,11 +21,10 @@ class CustomizedUserDataPanel(UserDataPanel):
                                      name=u'plone_tools').membership()
         member = membership.getAuthenticatedMember()
         member_groups = [group.getId() for group in member.getGroups()]
+        # TODO: to be fixed, inside __init__ we are always anonymous!
         if 'compagnie' in member_groups:
             self.form_fields = self.form_fields.omit(*('location',))
-            self.form_fields += form.Fields(ICompagniaRegistration)
         elif 'teatri' in member_groups:
-            self.form_fields += form.Fields(ITeatroRegistration)
+            pass
         else:
             self.form_fields = self.form_fields.omit(*('location',))
-            self.form_fields += form.Fields(IUtenteRegistration)

@@ -1,7 +1,10 @@
-from plone.app.users.browser.account import AccountPanelSchemaAdapter
+from plone.app.users.browser.personalpreferences import UserDataPanelAdapter
+from Products.CMFPlone.utils import safe_unicode
 
 
-class BaseUserDataPanelAdapter(AccountPanelSchemaAdapter):
+class UserDataPanelAdapter(UserDataPanelAdapter):
+    """ Registration adapter """
+
     def _getProperty(self, name):
         """ PlonePAS encodes all unicode coming from PropertySheets.
             Decode before sending to formlib. """
@@ -9,9 +12,6 @@ class BaseUserDataPanelAdapter(AccountPanelSchemaAdapter):
         if value:
             return safe_unicode(value)
         return value
-
-
-class UtenteUserDataPanelAdapter(BaseUserDataPanelAdapter):
 
     def get_provincia(self):
         return self._getProperty('provincia')
@@ -22,9 +22,6 @@ class UtenteUserDataPanelAdapter(BaseUserDataPanelAdapter):
         return self.context.setMemberProperties({'provincia': value})
 
     provincia = property(get_provincia, set_provincia)
-
-
-class TeatroUserDataPanelAdapter(UtenteUserDataPanelAdapter):
 
     def get_comune(self):
         return self._getProperty('comune')
@@ -55,9 +52,6 @@ class TeatroUserDataPanelAdapter(UtenteUserDataPanelAdapter):
         return self.context.setMemberProperties({'telefono': value})
 
     telefono = property(get_telefono, set_telefono)
-
-
-class CompagniaUserDataPanelAdapter(BaseUserDataPanelAdapter):
 
     def get_tipo(self):
         return self._getProperty('tipo')
