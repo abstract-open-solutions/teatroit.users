@@ -21,9 +21,9 @@ Cosa fa:
 
 * una vista landing @@register con 3 differenti percorsi di registrazione (@@utente_register, @@teatro_register e @@compagnia_register)
 
-TODO:
+* preferenze personali custom
 
-* form preferenze personali custom
+TODO:
 
 * setup content rules
 
