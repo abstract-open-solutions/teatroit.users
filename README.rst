@@ -25,13 +25,12 @@ Cosa fa:
 
 * campo email aggiuntivo su gruppo (Email2)
 
+* creazione content rule custom basata su collective.contentrules.mailtogroup
+
 TODO:
 
-* setup content rules
 
-* login sociali (fuori, da discutere)
-
-
+* analisi login sociali
 
 
 Tests
