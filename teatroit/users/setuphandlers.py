@@ -18,7 +18,8 @@ class SetupVarious:
         site = context.getSite()
 
         # do something...
-        self.setupGroups(site)
+        self.installProducts(site)
+        self.setupSelfRegistration(site)
         self.setupSelfRegistration(site)
 
     def setupGroups(self, site):
@@ -33,6 +34,13 @@ class SetupVarious:
 
     def setupSelfRegistration(self, site):
          ISecuritySchema(site).enable_self_reg = True
+
+    def installProducts(self, site):
+         """ Install traditional products without profile """
+         portal_quickinstaller = getToolByName(site,
+                                               'portal_quickinstaller')
+         if not portal_quickinstaller.isProductInstalled('quintagroup.captcha.core'):
+             portal_quickinstaller.installProduct('quintagroup.captcha.core')
 
 def setupVarious(context):
     """ setup various step. Handles for steps not handled by a gs profile """
