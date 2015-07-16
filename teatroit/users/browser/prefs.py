@@ -22,8 +22,10 @@ class CustomizedUserDataPanel(UserDataPanel):
         member = membership.getAuthenticatedMember()
         member_groups = [group.getId() for group in member.getGroups()]
         if 'compagnie' in member_groups:
+            self.form_fields = self.form_fields.omit(*('location',))
             self.form_fields += form.Fields(ICompagniaRegistration)
         elif 'teatri' in member_groups:
             self.form_fields += form.Fields(ITeatroRegistration)
         else:
+            self.form_fields = self.form_fields.omit(*('location',))
             self.form_fields += form.Fields(IUtenteRegistration)
