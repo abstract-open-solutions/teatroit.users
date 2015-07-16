@@ -13,7 +13,7 @@ Cosa fa:
 
 * abilitazione captcha su join form
 
-* una vista landing @@iscriviti con 3 differenti percorsi di registrazione (@@register, @@teatro_register e @@compagnia_register)
+* una vista landing @@register con 3 differenti percorsi di registrazione (@@utente_register, @@teatro_register e @@compagnia_register)
 
 TODO:
 

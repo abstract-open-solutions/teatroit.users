@@ -10,14 +10,14 @@
 
   <!-- Register landing page -->
   <browser:page
-      name="iscriviti"
+      name="register"
       for="Products.CMFPlone.Portal.PloneSite"
       template="templates/register.pt"
       permission="zope.Public"
       />
   <!-- Join forms -->
   <browser:page
-      name="register"
+      name="utente_register"
       for="Products.CMFPlone.Portal.PloneSite"
       class=".register.UtenteRegistrationForm"
       permission="zope.Public"
