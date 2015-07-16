@@ -9,6 +9,7 @@ from .browser.interfaces import (
 
 
 class IEnhancedUserDataSchema(IUserDataSchema,
+                              ITeatroRegistration,
                               IUtenteRegistration,
                               ICompagniaRegistration):
     """ Use all the fields from the default user data schema, and add various

@@ -41,6 +41,24 @@
     class=".prefs.CustomizedUserDataPanel"
     permission="cmf.SetOwnProperties"
     />
+  <browser:page
+    for="Products.CMFPlone.Portal.PloneSite"
+    name="utente-personal-information"
+    class=".prefs.UtenteDataPanel"
+    permission="cmf.SetOwnProperties"
+    />
+  <browser:page
+    for="Products.CMFPlone.Portal.PloneSite"
+    name="teatro-personal-information"
+    class=".prefs.TeatroDataPanel"
+    permission="cmf.SetOwnProperties"
+    />
+  <browser:page
+    for="Products.CMFPlone.Portal.PloneSite"
+    name="compagnia-personal-information"
+    class=".prefs.CompagniaDataPanel"
+    permission="cmf.SetOwnProperties"
+    />
   <!-- Adapters -->
   <adapter
     provides="..userdataschema.IEnhancedUserDataSchema"
