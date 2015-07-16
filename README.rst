@@ -3,6 +3,12 @@ teatroit.users
 
 Utenti e ruoli.
 
+NOTA IMPORTANTE:
+
+* assicurati di aver configurato le opzioni MAIL sul pannello di controllo
+  perchè Plone disabilita automaticamente il form register se mancano questi
+  parametri
+
 Cosa fa:
 
 * initializzazione gruppi
