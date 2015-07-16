@@ -17,8 +17,8 @@ class TeatroitUsersLayer(PloneSandboxLayer):
 
     def setUpZope(self, app, configurationContext):
         # Load ZCML
-        import quintagroup.formlib.captcha
-        xmlconfig.file('configure.zcml', quintagroup.formlib.captcha, context=configurationContext)
+        import quintagroup.captcha.core
+        xmlconfig.file('configure.zcml', quintagroup.captcha.core, context=configurationContext)
         import teatroit.users
         xmlconfig.file('configure.zcml', teatroit.users, context=configurationContext)
 
@@ -30,7 +30,6 @@ class TeatroitUsersLayer(PloneSandboxLayer):
 #        z2.uninstallProduct(app, 'Products.PloneFormGen')
 
     def setUpPloneSite(self, portal):
-        quickInstallProduct(portal, 'quintagroup.formlib.captcha')
         applyProfile(portal, 'teatroit.users:default')
 
 TEATROIT_USERS_FIXTURE = TeatroitUsersLayer()
