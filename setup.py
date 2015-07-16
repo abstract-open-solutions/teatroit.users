@@ -31,6 +31,7 @@ setup(name='teatroit.users',
           'setuptools',
           # -*- Extra requirements: -*-
           'quintagroup.formlib.captcha',
+          'collective.contentrules.mailtogroup',
       ],
       extras_require={'test': testing_requires},
       entry_points="""
