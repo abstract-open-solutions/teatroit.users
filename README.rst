@@ -30,10 +30,7 @@ Cosa fa:
 * configurazione automatica della content rule (disabilitata). Nota bene: cambiare mittente mail ed evitare modifiche
   TTW alla regola (tenere allineato il codice!)
 
-TODO:
-
-* analisi login sociali
-
+* analisi login sociali su google doc condiviso
 
 Tests
 -----
