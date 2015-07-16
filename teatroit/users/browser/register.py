@@ -1,3 +1,4 @@
+import copy
 from zope.formlib import form
 from zope.component import getMultiAdapter
 from zope.interface import implements
@@ -13,6 +14,7 @@ from .interfaces import (
     ICompagniaRegistration,
     ICaptchaSchema,
     )
+from .. import teatroitUsersMessageFactory as _
 
 
 class BasicRegistrationForm(RegistrationForm):
@@ -68,6 +70,12 @@ class TeatroRegistrationForm(BasicRegistrationForm):
 
         # let's keep safe if form_fields is empty (no mail settings)
         if myfields:
+            # update fullname title and description
+            fullname_field = copy.copy(myfields['fullname'].field)
+            fullname_field.title = _(u'Teatro')
+            fullname_field.description = u''
+            myfields['fullname'].field = fullname_field
+
             # Add a captcha field to the schema
             myfields += form.Fields(ITeatroRegistration)
     
@@ -87,6 +95,12 @@ class CompagniaRegistrationForm(BasicRegistrationForm):
 
         # let's keep safe if form_fields is empty (no mail settings)
         if myfields:
+            # update fullname title and description
+            fullname_field = copy.copy(myfields['fullname'].field)
+            fullname_field.title = _(u'Compagnia')
+            fullname_field.description = u''
+            myfields['fullname'].field = fullname_field
+
             # Add a captcha field to the schema
             myfields += form.Fields(ICompagniaRegistration)
     

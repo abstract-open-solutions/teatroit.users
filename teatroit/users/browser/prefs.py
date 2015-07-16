@@ -1,3 +1,4 @@
+import copy
 from zope.formlib import form
 from zope.component import getMultiAdapter
 from plone.app.users.browser.personalpreferences import UserDataPanel
@@ -8,6 +9,7 @@ from .interfaces import (
     ITeatroRegistration,
     ICompagniaRegistration,
     )
+from .. import teatroitUsersMessageFactory as _
 
 
 class CustomizedUserDataPanel(BrowserView):
@@ -54,6 +56,11 @@ class TeatroDataPanel(UserDataPanel):
                                                    'description',
                                                    'tipo',
                                                    'home_page'))
+        # update fullname title and description
+        fullname_field = copy.copy(self.form_fields['fullname'].field)
+        fullname_field.title = _(u'Teatro')
+        fullname_field.description = u''
+        self.form_fields['fullname'].field = fullname_field
 
 
 class CompagniaDataPanel(UserDataPanel):
@@ -69,3 +76,8 @@ class CompagniaDataPanel(UserDataPanel):
                                                    'telefono',
                                                    'provincia',
                                                    'home_page'))
+        # update fullname title and description
+        fullname_field = copy.copy(self.form_fields['fullname'].field)
+        fullname_field.title = _(u'Compagnia')
+        fullname_field.description = u''
+        self.form_fields['fullname'].field = fullname_field
