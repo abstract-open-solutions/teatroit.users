@@ -22,6 +22,7 @@ class SetupVarious:
         self.setupSelfRegistration(site)
 
     def setupGroups(self, site):
+        # create groups
         acl_users = getToolByName(site, 'acl_users')
         portal_groups = getToolByName(site, 'portal_groups')
         for group_id, group_title, roles in GROUPS:
@@ -30,6 +31,10 @@ class SetupVarious:
                                        title=group_title,
                                        roles=roles,
                                       )
+        # add group properties
+        portal_groupdata = getToolByName(site, 'portal_groupdata')
+        if portal_groupdata.getProperty('Email2') is None:
+            portal_groupdata.manage_addProperty(id='Email2', type='string', value='')
 
     def setupSelfRegistration(self, site):
          ISecuritySchema(site).enable_self_reg = True

@@ -23,11 +23,11 @@ Cosa fa:
 
 * preferenze personali custom
 
+* campo email aggiuntivo su gruppo (Email2)
+
 TODO:
 
 * setup content rules
-
-* campo email aggiuntivo su gruppo
 
 * login sociali (fuori, da discutere)
 
