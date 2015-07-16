@@ -47,11 +47,13 @@ class UtenteRegistrationForm(BasicRegistrationForm):
         # Get the fields so we can fiddle with them
         myfields = super(BasicRegistrationForm, self).form_fields
 
-        # Add a captcha field to the schema
-        myfields += form.Fields(IUtenteRegistration)
-
-        myfields = self._addCaptcha(myfields)
-
+        # let's keep safe if form_fields is empty (no mail settings)
+        if myfields:
+            # Add a captcha field to the schema
+            myfields += form.Fields(IUtenteRegistration)
+    
+            myfields = self._addCaptcha(myfields)
+    
         # Return the fiddled fields
         return myfields
 
@@ -64,11 +66,13 @@ class TeatroRegistrationForm(BasicRegistrationForm):
         # Get the fields so we can fiddle with them
         myfields = super(BasicRegistrationForm, self).form_fields
 
-        # Add a captcha field to the schema
-        myfields += form.Fields(ITeatroRegistration)
-
-        myfields = self._addCaptcha(myfields)
-
+        # let's keep safe if form_fields is empty (no mail settings)
+        if myfields:
+            # Add a captcha field to the schema
+            myfields += form.Fields(ITeatroRegistration)
+    
+            myfields = self._addCaptcha(myfields)
+    
         # Return the fiddled fields
         return myfields
 
@@ -81,10 +85,12 @@ class CompagniaRegistrationForm(BasicRegistrationForm):
         # Get the fields so we can fiddle with them
         myfields = super(BasicRegistrationForm, self).form_fields
 
-        # Add a captcha field to the schema
-        myfields += form.Fields(ICompagniaRegistration)
-
-        myfields = self._addCaptcha(myfields)
-
+        # let's keep safe if form_fields is empty (no mail settings)
+        if myfields:
+            # Add a captcha field to the schema
+            myfields += form.Fields(ICompagniaRegistration)
+    
+            myfields = self._addCaptcha(myfields)
+    
         # Return the fiddled fields
         return myfields
