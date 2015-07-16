@@ -1,10 +1,104 @@
 <metal:use-macro use-macro="context/main_template/macros/master">
 
     <metal:fill-slot fill-slot="main">
-        <tal:define define="portal_url context/@@plone_portal_state/portal_url;">
-            <a href="" tal:attributes="href string:${portal_url}/@@utente_register">Utente</a>
-            <a href="" tal:attributes="href string:${portal_url}/@@teatro_register">Teatro</a>
-            <a href="" tal:attributes="href string:${portal_url}/@@compagnia_register">Compagnia</a>
+        <tal:define define="portal_url context/@@plone_portal_state/portal_url;
+                            user_url string:${portal_url}/@@utente_register;
+                            teatro_url string:${portal_url}/@@teatro_register;
+                            compagnia_url string:${portal_url}/@@compagnia_register;">
+
+<h1 class="documentFirstHeading text-center">
+    Iscriviti gratuitamente a Teatro.it!
+</h1>
+
+<div class="row registrations-options">
+    <div class="col-md-4 user">
+        <div class="wrapper">
+            <h2 i18n:translate="">Sei un utente?</h2>
+            <div class="msg">
+                <h3 class="text-center">
+                    Partecipa alla più grande community italiana sul mondo del teatro e dello spettacolo!
+                </h3>
+                <p>L'iscrizione come Utente ti consente di:</p>
+                <ul class="options">
+                    <li>votare o commentare gli spettacoli</li>
+                    <li>inserire gli annunci in bacheca
+                        (max 5 al   mese, per inserirne di più
+                        <strong><a href="#TODO">collabora con Teatro.it</a></strong>)</li>
+                    <li>ricevere la Newsletter di Teatro.it</li>
+                    <li>inserire gli spettacoli nel cartellone</li>
+                    <li>E SE LAVORI NEL MONDO DELLO SPETTACOLO, PUOI   INSERIRE ANCHE IL TUO CV/REPERTORIO ONLINE CON FOTO E VIDEO!</li>
+                </ul>
+                <div class="text-center controls">
+                    <a class="btn btn-danger"
+                       tal:attributes="href user_url">Continua la registrazione come utente</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 compagnia">
+        <div class="wrapper">
+            <h2 i18n:translate="">Sei una compagnia, un'associazione, una scuola?</h2>
+            <div class="msg">
+                <h3 class="text-center">
+                    Fai conoscere i tuoi spettacoli
+                    e le tua attività a centinaia di migliaia di visitatori mensili!
+                </h3>
+                <p>L'iscrizione come Compagnia ti consente di:</p>
+                <ul class="options">
+                    <li>inserire gli spettacoli nel cartellone</li>
+                    <li>usufruire di servizi dedicati come l'inserimento del nominativo della compagnia nel nostro database di "Ricerca per Compagnie", che permette all'utente interessato di verificare direttamente la programmazione di riferimento.</li>
+                    <li>pubblicare la tua Compagnia nella
+                        <a href="#TODO">Vetrina Professionisti</a>
+                    </li>
+                </ul>
+                <p>
+                    Se desideri <strong>maggiore visibilità</strong>
+                    per i tuoi spettacoli, scrivi a
+                    <a href="mailto:marketing@teatro.it">marketing@teatro.it</a>.
+                </p>
+                <div class="text-center controls">
+                    <a class="btn btn-danger"
+                       tal:attributes="href compagnia_url">
+                       Continua la registrazione come compagnia/associazione
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 teatro">
+        <div class="wrapper">
+            <h2 i18n:translate="">Sei un teatro?</h2>
+            <div class="msg">
+                <h3 class="text-center">
+                    Gestisci autonomamente il tuo cartellone
+                    e pubblicizza gratis i tuoi spettacoli!
+                </h3>
+                <p>L'iscrizione come teatro ti consente di:</p>
+                <ul class="options">
+                    <li>gestire in autonomia il tuo cartellone</li>
+                    <li>effettuare modifiche ogni qualvolta lo ritieni opportuno.</li>
+                    <li>usufruire di servizi dedicati come l'inserimento del nominativo del teatro nel nostro database di "Ricerca per Teatro", che permette all'utente interessato di verificare direttamente la programmazione di riferimento.
+                    </li>
+                </ul>
+                <p>L'iscrizione come teatro è possibile solo dopo l'accettazione di Teatro.it e solo se l'indirizzo eMail fornito fa riferimento al sito del teatro stesso. Indirizzi esterni non possono essere presi in considerazione.</p>
+                <p>Nel caso di società di gestione di uno o più teatri è necessario ripetere la procedura di registrazione per ogni singolo teatro, fornendo indirizzi eMail differenti e riferiti ai singoli teatri registrati.</p>
+                <p>Il teatro che non dispone di un propri sito può completare l'iscrizione solo come Utente.</p>
+                <p>
+                    Se desideri <strong>maggiore visibilità</strong>
+                    per i tuoi spettacoli, scrivi a
+                    <a href="mailto:marketing@teatro.it">marketing@teatro.it</a>.
+                </p>
+                <div class="text-center controls">
+                    <a class="btn btn-danger"
+                       tal:attributes="href teatro_url">
+                       Continua la registrazione come teatro
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
         </tal:define>
     </metal:fill-slot>
 
