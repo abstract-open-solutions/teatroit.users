@@ -27,8 +27,10 @@ Cosa fa:
 
 * creazione content rule custom basata su collective.contentrules.mailtogroup
 
-TODO:
+* configurazione automatica della content rule (disabilitata). Nota bene: cambiare mittente mail ed evitare modifiche
+  TTW alla regola (tenere allineato il codice!)
 
+TODO:
 
 * analisi login sociali
 
