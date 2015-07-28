@@ -3,6 +3,5 @@
   <version>1000</version>
   <dependencies>
     <dependency>profile-quintagroup.captcha.core:default</dependency>
-    <dependency>profile-ftw.avatar:default</dependency>
   </dependencies>
 </metadata>
