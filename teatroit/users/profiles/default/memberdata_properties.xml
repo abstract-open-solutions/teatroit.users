@@ -4,6 +4,7 @@
  <property name="comune" type="string"></property>
  <property name="provincia" type="string"></property>
  <property name="telefono" type="string"></property>
- <property name="tipo" type="string"></property>
+ <!-- campi compagnia - prefix: "compagnia_" -->
+ <property name="compagnia_tipo" type="string"></property>
 </object>
 

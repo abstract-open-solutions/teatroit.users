@@ -39,7 +39,7 @@ class UtenteDataPanel(UserDataPanel):
         self.form_fields = self.form_fields.omit(*('portrait',
                                                    'pdelete',
                                                    'description',
-                                                   'tipo',
+                                                   'compagnia_tipo',
                                                    'location',
                                                    'comune',
                                                    'cap',
@@ -54,7 +54,7 @@ class TeatroDataPanel(UserDataPanel):
         self.form_fields = self.form_fields.omit(*('portrait',
                                                    'pdelete',
                                                    'description',
-                                                   'tipo',
+                                                   'compagnia_tipo',
                                                    'home_page'))
         # update fullname title and description
         fullname_field = copy.copy(self.form_fields['fullname'].field)

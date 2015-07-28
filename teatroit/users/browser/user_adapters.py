@@ -53,12 +53,12 @@ class UserDataPanelAdapter(UserDataPanelAdapter):
 
     telefono = property(get_telefono, set_telefono)
 
-    def get_tipo(self):
-        return self._getProperty('tipo')
+    def get_compagnia_tipo(self):
+        return self._getProperty('compagnia_tipo')
 
-    def set_tipo(self, value):
+    def set_compagnia_tipo(self, value):
         if value is None:
             value = ''
-        return self.context.setMemberProperties({'tipo': value})
+        return self.context.setMemberProperties({'compagnia_tipo': value})
 
-    tipo = property(get_tipo, set_tipo)
+    compagnia_tipo = property(get_compagnia_tipo, set_compagnia_tipo)

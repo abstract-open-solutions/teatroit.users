@@ -20,5 +20,5 @@ class ItemsVocab(object):
         return SimpleVocabulary(terms)
 
 
-tipo_compagnia_vocab = ItemsVocab(TIPO_COMPAGNIA_VOCAB)
+compagnia_tipo_vocab = ItemsVocab(TIPO_COMPAGNIA_VOCAB)
 provincia_vocab = ItemsVocab(PROVINCIA_VOCAB)

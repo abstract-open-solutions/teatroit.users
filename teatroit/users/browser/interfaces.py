@@ -36,5 +36,5 @@ class ITeatroRegistration(Interface):
     telefono = schema.TextLine(title=_(u"Telefono"), description=u"")
 
 class ICompagniaRegistration(Interface):
-    tipo = schema.Choice(title=_(u"Tipo compagnia"), description=u"",
-                         vocabulary=u'tipo_compagnia_vocab')
+    compagnia_tipo = schema.Choice(title=_(u"Tipo compagnia"), description=u"",
+                         vocabulary=u'compagnia_tipo_vocab')

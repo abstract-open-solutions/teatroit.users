@@ -5,8 +5,8 @@
 
     <utility
         provides="zope.schema.interfaces.IVocabularyFactory"
-        component=".vocabularies.tipo_compagnia_vocab"
-        name="tipo_compagnia_vocab"
+        component=".vocabularies.compagnia_tipo_vocab"
+        name="compagnia_tipo_vocab"
         />
     <utility
         provides="zope.schema.interfaces.IVocabularyFactory"

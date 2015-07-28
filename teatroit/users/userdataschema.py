@@ -5,7 +5,7 @@ from .browser.interfaces import (
     IUtenteRegistration,
     ITeatroRegistration,
     ICompagniaRegistration,
-    )
+)
 
 
 class IEnhancedUserDataSchema(IUserDataSchema,
@@ -16,10 +16,11 @@ class IEnhancedUserDataSchema(IUserDataSchema,
     extra fields.
     """
 
+
 class UserDataSchemaProvider(object):
     implements(IUserDataSchemaProvider)
 
-    def getSchema(self):
+    def getSchema(self): # noqa
         """
         """
         return IEnhancedUserDataSchema
