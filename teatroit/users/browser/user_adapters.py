@@ -62,3 +62,13 @@ class UserDataPanelAdapter(UserDataPanelAdapter):
         return self.context.setMemberProperties({'compagnia_tipo': value})
 
     compagnia_tipo = property(get_compagnia_tipo, set_compagnia_tipo)
+
+    def get_redazione_argomento(self):
+        return self._getProperty('redazione_argomento')
+
+    def set_redazione_argomento(self, value):
+        if value is None:
+            value = ''
+        return self.context.setMemberProperties({'redazione_argomento': value})
+
+    redazione_argomento = property(get_redazione_argomento, set_redazione_argomento)

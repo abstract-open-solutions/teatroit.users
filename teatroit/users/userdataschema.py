@@ -5,13 +5,15 @@ from .browser.interfaces import (
     IUtenteRegistration,
     ITeatroRegistration,
     ICompagniaRegistration,
+    IUtenteRedazioneSchema,
 )
 
 
 class IEnhancedUserDataSchema(IUserDataSchema,
                               ITeatroRegistration,
                               IUtenteRegistration,
-                              ICompagniaRegistration):
+                              ICompagniaRegistration,
+                              IUtenteRedazioneSchema):
     """ Use all the fields from the default user data schema, and add various
     extra fields.
     """

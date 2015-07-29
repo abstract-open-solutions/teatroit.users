@@ -1,15 +1,10 @@
 import copy
-from zope.formlib import form
+
 from zope.component import getMultiAdapter
 from plone.app.users.browser.personalpreferences import UserDataPanel
 from Products.Five.browser import BrowserView
 
-from .interfaces import (
-    IUtenteRegistration,
-    ITeatroRegistration,
-    ICompagniaRegistration,
-    )
-from .. import teatroitUsersMessageFactory as _
+from .. import _
 
 
 class CustomizedUserDataPanel(BrowserView):
@@ -33,18 +28,35 @@ class CustomizedUserDataPanel(BrowserView):
 
 
 class UtenteDataPanel(UserDataPanel):
-    def __init__(self, context, request):
-        super(UtenteDataPanel, self).__init__(context, request)
 
-        self.form_fields = self.form_fields.omit(*('portrait',
-                                                   'pdelete',
-                                                   'description',
-                                                   'compagnia_tipo',
-                                                   'location',
-                                                   'comune',
-                                                   'cap',
-                                                   'telefono',
-                                                   'home_page'))
+    def __call__(self):
+        # we must do this on __call__ to get current member
+        # because on init security stuff is not available yet!
+        # XXX: we shoul make this machinery configurable
+        # per user type and roles
+        omitted_fields = [
+            'pdelete',
+            'compagnia_tipo',
+            'location',
+            'comune',
+            'cap',
+            'telefono',
+            'home_page',
+            'redazione_argomento'
+        ]
+        membership = getMultiAdapter((self.context, self.request),
+                                     name=u'plone_tools').membership()
+
+        if self.userid:
+            member = membership.getMemberById(self.userid)
+        else:
+            member = membership.getAuthenticatedMember()
+
+        if member and 'Redattore' in member.getRoles():
+            omitted_fields = [x for x in omitted_fields
+                              if not x.startswith('redazione_')]
+        self.form_fields = self.form_fields.omit(*omitted_fields)
+        return super(UtenteDataPanel, self).__call__()
 
 
 class TeatroDataPanel(UserDataPanel):

@@ -13,6 +13,14 @@ TIPO_COMPAGNIA_VOCAB = (
     ('associazione-culturale', 'associazione-culturale', 'Associazione culturale'),
     ('scuola', 'scuola', 'Scuola'),
 )
+
+REDAZIONE_ARGOMENTO_VOCAB = (
+    ('teatro', 'teatro', 'Teatro'),
+    ('musica', 'musica', 'Musica'),
+    ('altro', 'altro', 'Altro'),
+)
+
+
 PROVINCIA_VOCAB = (
     ("AG", "AG", "Agrigento"),
     ("AL", "AL", "Alessandria"),

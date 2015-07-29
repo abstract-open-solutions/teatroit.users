@@ -3,6 +3,7 @@ from zope.i18nmessageid import MessageFactory
 from .config import PROJECTNAME
 
 teatroitUsersMessageFactory = MessageFactory(PROJECTNAME)
+_ = teatroitUsersMessageFactory
 
 
 def initialize(context):

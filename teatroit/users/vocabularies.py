@@ -1,9 +1,11 @@
+# -*- coding: utf-8 -*-
 from zope.schema.vocabulary import SimpleVocabulary
 from zope.schema.vocabulary import SimpleTerm
 from .config import (
     TIPO_COMPAGNIA_VOCAB,
     PROVINCIA_VOCAB,
-    )
+    REDAZIONE_ARGOMENTO_VOCAB
+)
 
 
 class ItemsVocab(object):
@@ -22,3 +24,4 @@ class ItemsVocab(object):
 
 compagnia_tipo_vocab = ItemsVocab(TIPO_COMPAGNIA_VOCAB)
 provincia_vocab = ItemsVocab(PROVINCIA_VOCAB)
+redazione_argomento_vocab = ItemsVocab(REDAZIONE_ARGOMENTO_VOCAB)
