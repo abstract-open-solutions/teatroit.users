@@ -37,6 +37,12 @@
   <!-- Prefs form -->
   <browser:page
     for="Products.CMFPlone.Portal.PloneSite"
+    name="user-information"
+    class=".prefs.CustomizedUserDataConfiglet"
+    permission="plone.app.controlpanel.UsersAndGroups"
+    />
+  <browser:page
+    for="Products.CMFPlone.Portal.PloneSite"
     name="personal-information"
     class=".prefs.CustomizedUserDataPanel"
     permission="cmf.SetOwnProperties"
@@ -65,5 +71,5 @@
     for="plone.app.layout.navigation.interfaces.INavigationRoot"
     factory=".user_adapters.UserDataPanelAdapter"
     />
-  
+
 </configure>
