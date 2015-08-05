@@ -13,10 +13,5 @@
         component=".vocabularies.provincia_vocab"
         name="provincia_vocab"
         />
-    <utility
-        provides="zope.schema.interfaces.IVocabularyFactory"
-        component=".vocabularies.redazione_argomento_vocab"
-        name="redazione_argomento_vocab"
-        />
 
 </configure>

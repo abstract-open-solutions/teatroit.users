@@ -4,7 +4,6 @@ from zope.schema.vocabulary import SimpleTerm
 from .config import (
     TIPO_COMPAGNIA_VOCAB,
     PROVINCIA_VOCAB,
-    REDAZIONE_ARGOMENTO_VOCAB
 )
 
 
@@ -18,10 +17,10 @@ class ItemsVocab(object):
         return self.TERMS
 
     def __call__(self, context):
-        terms = [SimpleTerm(value, token, title) for value, token, title in self.terms]
+        terms = [SimpleTerm(value, token, title)
+                 for value, token, title in self.terms]
         return SimpleVocabulary(terms)
 
 
 compagnia_tipo_vocab = ItemsVocab(TIPO_COMPAGNIA_VOCAB)
 provincia_vocab = ItemsVocab(PROVINCIA_VOCAB)
-redazione_argomento_vocab = ItemsVocab(REDAZIONE_ARGOMENTO_VOCAB)

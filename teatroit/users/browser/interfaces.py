@@ -2,6 +2,11 @@ from zope.interface import Interface
 from zope import schema
 from quintagroup.formlib.captcha import Captcha
 from zope.app.form.browser.itemswidgets import SelectWidget
+
+from teatroit.site.vocabularies import RegistrySource
+from teatroit.site.interfaces.settings import IGlobalCTSettings
+
+
 from .. import _
 
 
@@ -53,5 +58,17 @@ class IUtenteRedazioneSchema(Interface):
     redazione_argomento = schema.Choice(
         title=_(u"Ruolo redazione"),
         description=u"",
-        vocabulary=u'redazione_argomento_vocab'
+        source=RegistrySource(
+            iface=IGlobalCTSettings,
+            fname='issues_options',
+        )
+    )
+    redazione_regione_editoriale = schema.Choice(
+        title=_(u"Regione editoriale"),
+        description=u"",
+        source=RegistrySource(
+            iface=IGlobalCTSettings,
+            fname='editorial_regions',
+            first_item='--',
+        ),
     )

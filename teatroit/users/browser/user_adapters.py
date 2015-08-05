@@ -71,4 +71,17 @@ class UserDataPanelAdapter(UserDataPanelAdapter):
             value = ''
         return self.context.setMemberProperties({'redazione_argomento': value})
 
-    redazione_argomento = property(get_redazione_argomento, set_redazione_argomento)
+    redazione_argomento = property(get_redazione_argomento,
+                                   set_redazione_argomento)
+
+    def get_redazione_regione_editoriale(self):
+        return self._getProperty('redazione_regione_editoriale')
+
+    def set_redazione_regione_editoriale(self, value):
+        if value is None:
+            value = ''
+        return self.context.setMemberProperties(
+            {'redazione_regione_editoriale': value})
+
+    redazione_regione_editoriale = property(get_redazione_regione_editoriale,
+                                            set_redazione_regione_editoriale)

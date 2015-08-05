@@ -23,7 +23,8 @@ class CustomizedUserDataConfiglet(UserDataConfiglet):
             'cap',
             'telefono',
             'home_page',
-            'redazione_argomento'
+            'redazione_argomento',
+            'redazione_regione_editoriale',
         ]
         membership = getMultiAdapter((self.context, self.request),
                                      name=u'plone_tools').membership()
@@ -82,7 +83,8 @@ class UtenteDataPanel(UserDataPanel):
             'cap',
             'telefono',
             'home_page',
-            'redazione_argomento'
+            'redazione_argomento',
+            'redazione_regione_editoriale',
         ]
         membership = getMultiAdapter((self.context, self.request),
                                      name=u'plone_tools').membership()

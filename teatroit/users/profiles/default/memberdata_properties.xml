@@ -7,5 +7,6 @@
  <!-- campi compagnia - prefix: "compagnia_" -->
  <property name="compagnia_tipo" type="string"></property>
  <property name="redazione_argomento" type="string"></property>
+ <property name="redazione_regione_editoriale" type="string"></property>
 </object>
 
