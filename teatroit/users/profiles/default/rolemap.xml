@@ -4,6 +4,8 @@
     <role name="Redattore"/>
     <role name="Compagnia"/>
     <role name="Teatro"/>
+    <role name="Caporedattore"/>
+    <role name="Direttore"/>
   </roles>
   <permissions>
   </permissions>
