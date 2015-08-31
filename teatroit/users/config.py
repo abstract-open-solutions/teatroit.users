@@ -1,6 +1,5 @@
 PROJECTNAME = 'teatroit.users'
 
-# NOTA BENE: non aggiorniamo questo prodotto per via delle policy differenti di install/upgrade
 GROUPS = (
     ('redattori', 'Redattori', ('Redattore',)),
     ('caporedattori', 'Caporedattori', ('Reviewer',)),
