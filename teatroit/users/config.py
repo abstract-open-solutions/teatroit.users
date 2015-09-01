@@ -20,7 +20,7 @@ REDAZIONE_ARGOMENTO_VOCAB = (
     ('altro', 'altro', 'Altro'),
 )
 
-
+# preso dal loro vecchio sito
 PROVINCIA_VOCAB = (
     ("AG", "AG", "Agrigento"),
     ("AL", "AL", "Alessandria"),
@@ -138,3 +138,4 @@ PROVINCIA_VOCAB = (
     ("XE", "XE", "Spagna"),
     ("XS", "XS", "Svizzera"),
 )
+PROVINCIA_VOCAB_DICT = {x[0]: x[-1] for x in PROVINCIA_VOCAB}
