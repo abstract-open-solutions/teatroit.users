@@ -1,8 +1,8 @@
 PROJECTNAME = 'teatroit.users'
 
 GROUPS = (
-    ('redattori', 'Redattori', ('Redattore',)),
-    ('caporedattori', 'Caporedattori', ('Caporedattore',)),
+    ('redattori', 'Redattori', ('Redattore', 'Contributor')),
+    ('caporedattori', 'Caporedattori', ('Caporedattore', 'Contributor', 'Editor', 'Reviewer')),
     ('direttori', 'Direttori', ('Site Administator',)),
     ('compagnie', 'Compagnie', ('Compagnia',)),
     ('teatri', 'Teatri', ('Teatro',)),
